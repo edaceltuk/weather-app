@@ -4,11 +4,9 @@ import DayCard from './DayCard'
 class WeekContainer extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             fullData: [],
             dailyData: [],
-            citys: ['İstanbul', 'Ankara', 'İzmir'],
             id: 745044,
             selected: 'İstanbul'
         };
@@ -44,7 +42,7 @@ class WeekContainer extends React.Component {
     handleChange = (e) => {
         this.setState({ selected: e.target.value });
         console.log(this.state.selected)
-        if (this.state.selected == this.state.citys[0]) {
+        if (this.state.selected == 'İstanbul') {
             this.setState({ id: 745044 })
         }
         if (this.state.selected == 'Ankara') {
