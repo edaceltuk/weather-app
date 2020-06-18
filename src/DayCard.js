@@ -6,7 +6,8 @@ const DayCard = ({ reading }) => {
     let newDate = new Date();
     const weekday = reading.dt * 1000
     newDate.setTime(weekday)
-
+    var iconcode = reading.weather[0].icon;
+    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
     const imgURL = `owf owf-${reading.weather[0].id} owf-5x`
     console.log(reading.main)
     return (
@@ -16,6 +17,7 @@ const DayCard = ({ reading }) => {
                 <p className="text-muted">{moment(newDate).format('MMMM Do, h:mm a')}</p>
                 <i className={imgURL}></i>
                 <h2>{Math.round(reading.main.temp)} °C</h2>
+                <div id="icon"><img id="wicon" src={iconurl} alt="Weather icon" /></div>
                 <div className="card-body">
                     <p className="card-text">{reading.weather[0].description}</p>
                 </div>
