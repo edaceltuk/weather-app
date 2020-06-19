@@ -10,6 +10,7 @@ const DayCard = ({ reading }) => {
     var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
     const imgURL = `owf owf-${reading.weather[0].id} owf-5x`
     console.log(reading.main)
+    console.log(reading)
     return (
         <div className="col-sm-12 col-md-5 col-lg " style={{ float: 'left' }}>
             <div className="card" style={{ padding: 10, height: '100%' }}>

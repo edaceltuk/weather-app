@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import WeekContainer from './weekContainer';
+import WeekContainer from './WeekContainer';
 
 const App = () => {
 
