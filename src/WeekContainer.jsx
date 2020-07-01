@@ -7,6 +7,7 @@ const WeekContainer = () => {
     const [dailyData, setdailyData] = useState([])
     const [id, setID] = useState('745044');
     const [selectedCity, setSelectedCity] = useState('İstanbul')
+    const [cities, setcities] = useState({ 745044: 'istanbul', 323786: 'Ankara', 311046: 'İzmir', 750269: 'Bursa' })
 
     const formatDayCards = () => {
         return dailyData.map((reading, index) => <DayCard reading={reading} key={index} />)
@@ -27,10 +28,7 @@ const WeekContainer = () => {
 
     const handleChange = (e) => {
         setID(e.target.value)
-        let index = e.target.selectedIndex;
-        let el = e.target.childNodes[index]
-        let cityName = el.getAttribute('id');
-        setSelectedCity(cityName)
+        setSelectedCity(cities[e.target.value])
         getData()
     }
 
@@ -39,15 +37,15 @@ const WeekContainer = () => {
             <h1 className="display-5 jumbotron">5-Day Forecast.</h1>
             <div class='row'>
                 <div class='col-lg-2 col-sm col-md-12'>
-                    <h5>Şehirler</h5>
+                    <h5>Şehirler </h5>
                     <hr />
                     <select style={{ padding: 5, margin: 10 }} value={selectedCity}
                         onChange={handleChange}>
                         <option style={{ padding: 5 }} value="745044">Şehir Seçin</option>
-                        <option style={{ padding: 5 }} id='İstanbul' value="745044">İstanbul</option>
-                        <option style={{ padding: 5 }} id='Ankara' value="323786">Ankara</option>
-                        <option style={{ padding: 5 }} id='İzmir' value="311046">İzmir</option>
-                        <option style={{ padding: 5 }} id='Bursa' value="750269">Bursa</option>
+                        <option style={{ padding: 5 }} value="745044">İstanbul</option>
+                        <option style={{ padding: 5 }} value="323786">Ankara</option>
+                        <option style={{ padding: 5 }} value="311046">İzmir</option>
+                        <option style={{ padding: 5 }} value="750269">Bursa</option>
                     </select>
                 </div>
                 <div className="col col-lg-10 col-md-12 col-sm " style={{ float: 'left', paddig: '3%' }}>

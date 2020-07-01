@@ -12,7 +12,7 @@ const DayCard = ({ reading }) => {
     const imgURL = `owf owf-${reading.weather[0].id} owf-5x`
 
     return (
-        <div className="col-sm-12 col-md-5 col-lg " style={{ float: 'left' }}>
+        <div className="col-sm-12 col-md-5 col-lg " style={{ float: 'left', padding: '1%' }}>
             <div className="card" style={{ padding: 10, height: '100%' }}>
                 <h3 className="card-title">{moment(newDate).format('dddd')}</h3>
                 <p className="text-muted">{moment(newDate).format('MMMM Do, h:mm a')}</p>
