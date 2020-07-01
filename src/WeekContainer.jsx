@@ -13,7 +13,7 @@ const WeekContainer = () => {
         return dailyData.map((reading, index) => <DayCard reading={reading} key={index} />)
     }
     const getData = () => {
-        const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?id=${id}&units=metric&appid=${apiConfig.apiKey}`
+        const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?id=${id}&units=metric&appid=${apiConfig.apiKey}`
         fetch(weatherURL)
             .then(res => res.json())
             .then(data => {
