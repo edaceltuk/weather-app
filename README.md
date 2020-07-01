@@ -8,5 +8,4 @@ A simple weather forecast application I made using React , OpenWeatherMap and Ex
 
 ![screen](https://github.com/edaceltuk/weather-app/blob/master/assets/weatherImg.PNG)
 
-##Info 
- ı used express.js for deployment
+
